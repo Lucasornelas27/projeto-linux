@@ -1,23 +1,23 @@
 #!/bin/bash
 
-eco "criando de diretorio"
+echo "criando de diretorio"
 
 mkdir /publico
 mkdir /adm
 mkdir /ven
 mkdir /sec
 
-eco "finalizado criação de diretorio"
+echo "finalizado criação de diretorio"
 
-eco "criação de grupos"
+echo "criação de grupos"
 
 grupoadd GRP_ADM
 grupoadd GRP_VEN
 grupoadd GRP_SEC
 
-eco " finalizado criação de grupos"
+echo " finalizado criação de grupos"
 
-eco "criação de usuarios"
+echo "criação de usuarios"
 
 useradd carlos -m -s /bin/bash -p$(openssl passwd -crypt Senha123) -G  GRP_ADM
 useradd maria -m -s /bin/bash -p$(openssl passwd -crypt Senha123) -G  GRP_ADM
@@ -29,9 +29,9 @@ useradd josefina -m -s /bin/bash -p$(openssl passwd -crypt Senha123) -G GRP_SEC
 useradd amanda -m -s /bin/bash -p$(openssl passwd -crypt Senha123) -G GRP_SEC
 useradd rogerio -m -s /bin/bash -p$(openssl passwd -crypt Senha123) -G GRP_SEC
 
-eco "finalizado criação de usuarios"
+echo "finalizado criação de usuarios"
 
-eco "especificação de permissão de diretorio"
+echo "especificação de permissão de diretorio"
 
 chown root:GRP_ADM /adm
 chown root:GRP_VEN /ven
